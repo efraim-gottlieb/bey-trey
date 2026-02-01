@@ -33,7 +33,6 @@ async function fetchPosts() {
   console.log('Posts fetched.');
   const endTime = Date.now();
   const runTime = endTime - startTime;
-  console.log(runTime);
   apiCallTimes.push(runTime);
 }
 
