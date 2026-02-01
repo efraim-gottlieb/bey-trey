@@ -1,3 +1,4 @@
+import { error } from "console";
 import readline from "readline";
 
 const rl = readline.createInterface({
@@ -29,11 +30,15 @@ function promptUser(question) {
 async function fetchPosts() {
   console.log("Loading posts...");
   const startTime = Date.now();
-  posts = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=10");
-  console.log('Posts fetched.');
-  const endTime = Date.now();
-  const runTime = endTime - startTime;
-  apiCallTimes.push(runTime);
+  try {
+      posts = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=10");
+      console.log('Posts fetched.');
+      const endTime = Date.now();
+      const runTime = endTime - startTime;
+      apiCallTimes.push(runTime);
+  } catch(err) {
+    console.log(err);
+  }
 }
 
 // 5. Store the duration in apiCallTimes array
