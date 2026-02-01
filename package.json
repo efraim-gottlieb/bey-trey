@@ -1,0 +1,24 @@
+{
+  "name": "bey-trey",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000b\u0000e\u0000y\u0000-\u0000t\u0000r\u0000e\u0000y\u0000\r\u0000 \u0000",
+  "homepage": "https://github.com/efraim-gottlieb/bey-trey#readme",
+  "bugs": {
+    "url": "https://github.com/efraim-gottlieb/bey-trey/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efraim-gottlieb/bey-trey.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "readline": "^1.3.0"
+  }
+}
