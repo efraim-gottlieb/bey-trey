@@ -81,8 +81,8 @@ async function main() {
             default:
                 console.log('Invalid choice. Please enter 1, 2, 3, or 4.');
         }
-
-  let running = true;
+        let running = true;
+    }
 
   while (running) {
     displayMenu();
