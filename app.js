@@ -1,5 +1,4 @@
-import { error } from "console";
-import readline from "readline";
+import readline from 'readline';
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -50,11 +49,39 @@ function displayPostStatistics() {
 
 // Option 3: Display API performance statistics
 function displayApiPerformance() {
-  // TODO: Implement this function
+    let acc = 0
+    for (let i of apiCallTimes) {acc += i};
+    console.log(acc / apiCallTimes.length);
 }
 
 // Main function to run the application
 async function main() {
+
+    let running = true;
+
+    while (running) {
+        displayMenu();
+        const choice = await promptUser('Enter your choice (1-4): ');
+
+        switch (choice) {
+            case '1':
+                await fetchPosts();
+                break;
+            case '2':
+                displayPostStatistics();
+                break;
+            case '3':
+                displayApiPerformance();
+                break;
+            case '4':
+                console.log('Goodbye!');
+                running = false;
+                rl.close();
+                break;
+            default:
+                console.log('Invalid choice. Please enter 1, 2, 3, or 4.');
+        }
+
   let running = true;
 
   while (running) {
@@ -78,6 +105,7 @@ async function main() {
         break;
       default:
         console.log("Invalid choice. Please enter 1, 2, 3, or 4.");
+
     }
   }
 }
