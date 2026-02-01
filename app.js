@@ -1,3 +1,4 @@
+import { log } from 'console';
 import readline from 'readline';
 
 // Create readline interface
@@ -8,7 +9,7 @@ const rl = readline.createInterface({
 
 // Global variables to store fetched posts and API call times
 let posts = [];
-let apiCallTimes = [];
+let apiCallTimes = [770, 3, 4];
 
 // Function to display menu
 function displayMenu() {
@@ -47,17 +48,20 @@ function displayPostStatistics() {
 
 // Option 3: Display API performance statistics
 function displayApiPerformance() {
-    // TODO: Implement this function
+    let acc = 0
+    for (let i of apiCallTimes) {acc += i};
+    console.log(acc / apiCallTimes.length);
+
 }
 
 // Main function to run the application
 async function main() {
     let running = true;
-    
+
     while (running) {
         displayMenu();
         const choice = await promptUser('Enter your choice (1-4): ');
-        
+
         switch (choice) {
             case '1':
                 await fetchPosts();
